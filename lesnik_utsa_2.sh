@@ -54,8 +54,6 @@ update() {
 }
 
 # Actions
-sudo apt install wget -y &>/dev/null
-. /root/.bash_profile
 . <(wget -qO- https://raw.githubusercontent.com/letsnode/Utils/main/bashbuilder/logo.sh)
 cd
 $function
