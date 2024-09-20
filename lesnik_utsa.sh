@@ -53,6 +53,6 @@ update() {
 }
 
 # Actions
-. <(wget -qO- https://raw.githubusercontent.com/letsnode/Utils/main/bashbuilder/logo.sh)
+. <(wget -qO- https://raw.githubusercontent.com/lesnikutsa/lesnik_utsa/refs/heads/main/scripts/logo_old)
 cd
 $function
