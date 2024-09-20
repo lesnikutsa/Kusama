@@ -8,7 +8,7 @@ option_value(){ echo "$1" | sed -e 's%^--[^=]*=%%g; s%^-[^=]*=%%g'; }
 while test $# -gt 0; do
 	case "$1" in
 	-h|--help)
-		. <(wget -qO- https://raw.githubusercontent.com/letsnode/Utils/main/bashbuilder/logo.sh)
+		. <(wget -qO- https://raw.githubusercontent.com/lesnikutsa/lesnik_utsa/refs/heads/main/scripts/logo_old)
 		echo
 		echo -e "${C_LGn}Functionality${RES}: the script performs many actions related to a Kusama node"
 		echo
@@ -20,8 +20,7 @@ while test $# -gt 0; do
 		echo
 		echo -e "${C_LGn}Useful URLs${RES}:"
 		echo -e "https://raw.githubusercontent.com/letsnode/Utils/main/installers/golang.sh - script URL"
-		echo -e "https://t.me/letskynode — node Community"
-		echo -e "https://teletype.in/@letskynode — guides and articles"
+		echo -e "https://utsa.gitbook.io/services — guides and articles"
 		echo
 		return 0 2>/dev/null; exit 0
 		;;
