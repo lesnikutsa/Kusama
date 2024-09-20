@@ -45,9 +45,9 @@ update() {
 	status=`docker pull parity/polkadot`
 	if ! grep -q "Image is up to date for" <<< "$status"; then
 		printf_n "${C_LGn}Updating...${RES}"
-		docker stop kusama_node
-		docker rm kusama_node
-		docker run -dit --name kusama_node --restart always --network host -v $HOME/.kusama:/data -u $(id -u ${USER}):$(id -g ${USER}) parity/polkadot:latest --base-path /data --chain kusama --validator --name "lesnik_utsa" --sync=warp --port 30533 --rpc-port 9953 --prometheus-port 9655 --in-peers 20 --out-peers 20 --telemetry-url 'wss://telemetry-backend.w3f.community/submit 1' --telemetry-url 'wss://telemetry.polkadot.io/submit/ 1'
+		docker stop kusama_lesnik
+		docker rm kusama_lesnik
+		docker run -dit --name kusama_lesnik --restart always --network host -v $HOME/.kusama:/data -u $(id -u ${USER}):$(id -g ${USER}) parity/polkadot:latest --base-path /data --chain kusama --validator --name "lesnik_utsa" --state-pruning 16 --blocks-pruning 16 --insecure-validator-i-know-what-i-do --port 30333 --rpc-port 9933 --prometheus-port 9615 --in-peers 12 --out-peers 8 --telemetry-url 'wss://telemetry.polkadot.io/submit/ 1' --telemetry-url 'wss://telemetry-backend.w3f.community/submit 1'
 	else
 		printf_n "${C_LGn}Node version is current!${RES}"
 	fi
